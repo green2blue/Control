@@ -239,7 +239,7 @@ void lcdml_menu_control(void)
   // global defines
   #define encoder_A_pin       18 // 52    // physical pin has to be 2 or 3 to use interrupts (on mega e.g. 20 or 21), use internal pullups
   #define encoder_B_pin       19 // 53    // physical pin has to be 2 or 3 to use interrupts (on mega e.g. 20 or 21), use internal pullups
-  #define encoder_button_pin  51    // physical pin , use internal pullup
+  #define encoder_button_pin  45 // 51   // physical pin , use internal pullup
 
   #define g_LCDML_CONTROL_button_long_press    800   // ms
   #define g_LCDML_CONTROL_button_short_press   120   // ms

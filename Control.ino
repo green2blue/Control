@@ -115,15 +115,3 @@ void loop() {
   
 }
 // +++++++++++++++++++ L O O P   E N D E  ++++++++++++++++++++++++++++++
-
-
-
-
-
-
-// *********************************************************************
-// check some errors - do not change here anything
-// *********************************************************************
-# if(_LCDML_DISP_rows > _LCDML_DISP_cfg_max_rows)
-# error change value of _LCDML_DISP_cfg_max_rows in LCDMenuLib2.h
-# endif
