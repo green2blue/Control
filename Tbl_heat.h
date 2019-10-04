@@ -494,54 +494,204 @@
 //--------------------------------------------------------------------------------------------------------------
 #define _S10_OFFS  		_S09_OFFS +_S09_RECORDS *_S09_FIELDS + _S09_RECORDS*_S09_FIELDS*_S09_LNGCOUNT
 #define _S10_FIELDS     2
-#define _S10_RECORDS    6
+#define _S10_RECORDS    31
 #define _S10_LNGCOUNT   1
-// S p r a c h e   0  6 Datensätze je 2 Felder  = 12 Einträge
+// S p r a c h e   0  31 Datensätze je 2 Felder  = 62 Einträge
   const char S10_0001[] PROGMEM = "DS18 01";              // Fühler Nummer 1
-  const char S10_0002[] PROGMEM = "buffer store top";     // Name Sprache 1 = Englisch
+  const char S10_0002[] PROGMEM = "description sensor 1";     // Name Sprache 1 = Englisch
   const char S10_0003[] PROGMEM = "DS18 02";
-  const char S10_0004[] PROGMEM = "buffer store down";
+  const char S10_0004[] PROGMEM = "description sensor 2";
   const char S10_0005[] PROGMEM = "DS18 03";
-  const char S10_0006[] PROGMEM = "heat pump VL";
+  const char S10_0006[] PROGMEM = "description sensor 3";
   const char S10_0007[] PROGMEM = "DS18 04";
-  const char S10_0008[] PROGMEM = "sensor 4";
+  const char S10_0008[] PROGMEM = "description sensor 4";
   const char S10_0009[] PROGMEM = "DS18 05";
-  const char S10_0010[] PROGMEM = "sensor 5";
+  const char S10_0010[] PROGMEM = "description sensor 5";
   const char S10_0011[] PROGMEM = "DS18 06";
-  const char S10_0012[] PROGMEM = "sensor 6";
-// nächste S p r a c h e  1  6 Datensätze je 2 Felder = 12 Einträge 
-  const char S10_0013[] PROGMEM = "DS18 01";              // Fühler Nummer 1  
-  const char S10_0014[] PROGMEM = "Pufferspeicher oben";  // Name Sprache 2 = Deutsch 
-  const char S10_0015[] PROGMEM = "DS18 02";
-  const char S10_0016[] PROGMEM = "Pufferspeicher unten";
-  const char S10_0017[] PROGMEM = "DS18 03";
-  const char S10_0018[] PROGMEM = "Wärmepumpe VL";
-  const char S10_0019[] PROGMEM = "DS18 04";
-  const char S10_0020[] PROGMEM = "Sensor Nr 4";
-  const char S10_0021[] PROGMEM = "DS18 05";
-  const char S10_0022[] PROGMEM = "Sensor Nr 5";
-  const char S10_0023[] PROGMEM = "DS18 06";
-  const char S10_0024[] PROGMEM = "Sensor Nr 6";
+  const char S10_0012[] PROGMEM = "description sensor 6";
+  const char S10_0013[] PROGMEM = "DS18 07";
+  const char S10_0014[] PROGMEM = "description sensor 7";
+  const char S10_0015[] PROGMEM = "DS18 08";
+  const char S10_0016[] PROGMEM = "description sensor 8";
+  const char S10_0017[] PROGMEM = "DS18 09";
+  const char S10_0018[] PROGMEM = "description sensor 9";
+  const char S10_0019[] PROGMEM = "DS18 10";
+  const char S10_0020[] PROGMEM = "description sensor 10";
+  const char S10_0021[] PROGMEM = "DS18 11";
+  const char S10_0022[] PROGMEM = "description sensor 11";
+  const char S10_0023[] PROGMEM = "DS18 12";
+  const char S10_0024[] PROGMEM = "description sensor 12";
+  const char S10_0025[] PROGMEM = "DS18 13";
+  const char S10_0026[] PROGMEM = "description sensor 13";
+  const char S10_0027[] PROGMEM = "DS18 14";
+  const char S10_0028[] PROGMEM = "description sensor 14";
+  const char S10_0029[] PROGMEM = "DS18 15";
+  const char S10_0030[] PROGMEM = "description sensor 15";
+  const char S10_0031[] PROGMEM = "DS18 16";
+  const char S10_0032[] PROGMEM = "description sensor 16";
+  const char S10_0033[] PROGMEM = "DS18 17";
+  const char S10_0034[] PROGMEM = "description sensor 17";
+  const char S10_0035[] PROGMEM = "DS18 18";
+  const char S10_0036[] PROGMEM = "description sensor 18";
+  const char S10_0037[] PROGMEM = "DS18 19";
+  const char S10_0038[] PROGMEM = "description sensor 19";
+  const char S10_0039[] PROGMEM = "DS18 20";
+  const char S10_0040[] PROGMEM = "description sensor 20";
+  const char S10_0041[] PROGMEM = "DS18 21";
+  const char S10_0042[] PROGMEM = "description sensor 21";
+  const char S10_0043[] PROGMEM = "DS18 22";
+  const char S10_0044[] PROGMEM = "description sensor 22";
+  const char S10_0045[] PROGMEM = "DS18 23";
+  const char S10_0046[] PROGMEM = "description sensor 23";
+  const char S10_0047[] PROGMEM = "DS18 24";
+  const char S10_0048[] PROGMEM = "description sensor 24";
+  const char S10_0049[] PROGMEM = "DS18 25";
+  const char S10_0050[] PROGMEM = "description sensor 25";
+  const char S10_0051[] PROGMEM = "DS18 26";
+  const char S10_0052[] PROGMEM = "description sensor 26";
+  const char S10_0053[] PROGMEM = "DS18 27";
+  const char S10_0054[] PROGMEM = "description sensor 27";
+  const char S10_0055[] PROGMEM = "DS18 28";
+  const char S10_0056[] PROGMEM = "description sensor 28";
+  const char S10_0057[] PROGMEM = "DS18 29";
+  const char S10_0058[] PROGMEM = "description sensor 29";
+  const char S10_0059[] PROGMEM = "DS18 30";
+  const char S10_0060[] PROGMEM = "description sensor 30";
+  const char S10_0061[] PROGMEM = "DS18 31";
+  const char S10_0062[] PROGMEM = "description sensor 31";
+  
+// nächste S p r a c h e  1  31 Datensätze je 2 Felder = 62 Einträge 
+  const char S10_0063[] PROGMEM = "DS18 01";              // Fühler Nummer 1  
+  const char S10_0064[] PROGMEM = "Beschreiben Fühler 1";  // Name Sprache 2 = Deutsch 
+  const char S10_0065[] PROGMEM = "DS18 02";
+  const char S10_0066[] PROGMEM = "Beschreiben Fühler 2";
+  const char S10_0067[] PROGMEM = "DS18 03";
+  const char S10_0068[] PROGMEM = "Beschreiben Fühler 3";
+  const char S10_0069[] PROGMEM = "DS18 04";
+  const char S10_0070[] PROGMEM = "Beschreiben Fühler 4";
+  const char S10_0071[] PROGMEM = "DS18 05";
+  const char S10_0072[] PROGMEM = "Beschreiben Fühler 5";
+  const char S10_0073[] PROGMEM = "DS18 06";
+  const char S10_0074[] PROGMEM = "Beschreiben Fühler 6";
+  const char S10_0075[] PROGMEM = "DS18 07";
+  const char S10_0076[] PROGMEM = "Beschreiben Fühler 7";
+  const char S10_0077[] PROGMEM = "DS18 08";
+  const char S10_0078[] PROGMEM = "Beschreiben Fühler 8";
+  const char S10_0079[] PROGMEM = "DS18 09";
+  const char S10_0080[] PROGMEM = "Beschreiben Fühler 9";
+  const char S10_0081[] PROGMEM = "DS18 10";
+  const char S10_0082[] PROGMEM = "Beschreiben Fühler 10";
+  const char S10_0083[] PROGMEM = "DS18 11";
+  const char S10_0084[] PROGMEM = "Beschreiben Fühler 11";
+  const char S10_0085[] PROGMEM = "DS18 12";
+  const char S10_0086[] PROGMEM = "Beschreiben Fühler 12";
+  const char S10_0087[] PROGMEM = "DS18 13";
+  const char S10_0088[] PROGMEM = "Beschreiben Fühler 13";
+  const char S10_0089[] PROGMEM = "DS18 14";
+  const char S10_0090[] PROGMEM = "Beschreiben Fühler 14";
+  const char S10_0091[] PROGMEM = "DS18 15";
+  const char S10_0092[] PROGMEM = "Beschreiben Fühler 15";
+  const char S10_0093[] PROGMEM = "DS18 16";
+  const char S10_0094[] PROGMEM = "Beschreiben Fühler 16";
+  const char S10_0095[] PROGMEM = "DS18 17";
+  const char S10_0096[] PROGMEM = "Beschreiben Fühler 17";
+  const char S10_0097[] PROGMEM = "DS18 18";
+  const char S10_0098[] PROGMEM = "Beschreiben Fühler 18";
+  const char S10_0099[] PROGMEM = "DS18 19";
+  const char S10_0100[] PROGMEM = "Beschreiben Fühler 19";
+  const char S10_0101[] PROGMEM = "DS18 20";
+  const char S10_0102[] PROGMEM = "Beschreiben Fühler 20";
+  const char S10_0103[] PROGMEM = "DS18 21";
+  const char S10_0104[] PROGMEM = "Beschreiben Fühler 21";
+  const char S10_0105[] PROGMEM = "DS18 22";
+  const char S10_0106[] PROGMEM = "Beschreiben Fühler 22";
+  const char S10_0107[] PROGMEM = "DS18 23";
+  const char S10_0108[] PROGMEM = "Beschreiben Fühler 23";
+  const char S10_0109[] PROGMEM = "DS18 24";
+  const char S10_0110[] PROGMEM = "Beschreiben Fühler 24";
+  const char S10_0111[] PROGMEM = "DS18 25";
+  const char S10_0112[] PROGMEM = "Beschreiben Fühler 25";
+  const char S10_0113[] PROGMEM = "DS18 26";
+  const char S10_0114[] PROGMEM = "Beschreiben Fühler 26";
+  const char S10_0115[] PROGMEM = "DS18 27";
+  const char S10_0116[] PROGMEM = "Beschreiben Fühler 27";
+  const char S10_0117[] PROGMEM = "DS18 28";
+  const char S10_0118[] PROGMEM = "Beschreiben Fühler 28";
+  const char S10_0119[] PROGMEM = "DS18 29";
+  const char S10_0120[] PROGMEM = "Beschreiben Fühler 29";
+  const char S10_0121[] PROGMEM = "DS18 30";
+  const char S10_0122[] PROGMEM = "Beschreiben Fühler 30";
+  const char S10_0123[] PROGMEM = "DS18 31";
+  const char S10_0124[] PROGMEM = "Beschreiben Fühler 31";
 //-------------------------------------------------------------------------
 // Temperaturfühler DS18 Sprachenunabhängiger TEIL wie PIN, ADRESSE
 //-------------------------------------------------------------------------
 #define _S11_OFFS      _S10_OFFS +_S10_RECORDS *_S10_FIELDS + _S10_RECORDS*_S10_FIELDS*_S10_LNGCOUNT   
 #define _S11_FIELDS     2     // Anzahl Felder pro Datensatz
-#define _S11_RECORDS    6     // Anzahl Datensätze (muß Synchron mit _S10_ Abschnitt sein !!)
+#define _S11_RECORDS    31     // Anzahl Datensätze (muß Synchron mit _S10_ Abschnitt sein !!)
 #define _S11_LNGCOUNT   0     // Anzahl zusätzlicher Sprachen für diesen Bereich
-  const char S11_0001[] PROGMEM = "50";                     // Pin-Nummer für Sensor 01
-  const char S11_0002[] PROGMEM = "Adresse für Sensor 01";  // HEX-Adresse des Sensors 
-  const char S11_0003[] PROGMEM = "50";                     // Pin-Nummer für Sensor 02
-  const char S11_0004[] PROGMEM = "Adresse für Sensor 02";  // HEX-Adresse des Sensors 
-  const char S11_0005[] PROGMEM = "50";                     // Pin-Nummer für Sensor 03
-  const char S11_0006[] PROGMEM = "Adresse für Sensor 03";  // HEX-Adresse des Sensors 
-  const char S11_0007[] PROGMEM = "50";                     // Pin-Nummer für Sensor 04
-  const char S11_0008[] PROGMEM = "Adresse für Sensor 04";  // HEX-Adresse des Sensors 
-  const char S11_0009[] PROGMEM = "50";                     // Pin-Nummer für Sensor 05
-  const char S11_0010[] PROGMEM = "Adresse für Sensor 05";  // HEX-Adresse des Sensors 
-  const char S11_0011[] PROGMEM = "50";                     // Pin-Nummer für Sensor 06
-  const char S11_0012[] PROGMEM = "Adresse für Sensor 06";  // HEX-Adresse des Sensors 
-
+  const char S11_0001[] PROGMEM = "10";                     // Pin-Nummer für Sensor 01
+  const char S11_0002[] PROGMEM = "28 FF 60 74 60 18 2 7C";   // HEX-Adresse des Sensors 01
+  const char S11_0003[] PROGMEM = "10";
+  const char S11_0004[] PROGMEM = "28 FF D0 CB 67 18 1 A0";   // HEX-Adresse des Sensors 02
+  const char S11_0005[] PROGMEM = "10";
+  const char S11_0006[] PROGMEM = "28 FF D3 70 60 18 2 73";   // HEX-Adresse des Sensors 03
+  const char S11_0007[] PROGMEM = "10";
+  const char S11_0008[] PROGMEM = "28 FF 2C BB 67 18 1 8F";   // HEX-Adresse des Sensors 04
+  const char S11_0009[] PROGMEM = "10";
+  const char S11_0010[] PROGMEM = "28 FF 7 BA 65 18 3 7B";   // HEX-Adresse des Sensors 05
+  const char S11_0011[] PROGMEM = "10";
+  const char S11_0012[] PROGMEM = "28 FF C9 BB 65 18 3 74";   // HEX-Adresse des Sensors 06
+  const char S11_0013[] PROGMEM = "10";
+  const char S11_0014[] PROGMEM = "28 FF 54 7A 60 18 2 F2";   // HEX-Adresse des Sensors 07
+  const char S11_0015[] PROGMEM = "10";
+  const char S11_0016[] PROGMEM = "28 FF 6 64 60 18 2 C9";   // HEX-Adresse des Sensors 08
+  const char S11_0017[] PROGMEM = "10";
+  const char S11_0018[] PROGMEM = "28 FF DD 4D 60 18 2 4";   // HEX-Adresse des Sensors 09
+  const char S11_0019[] PROGMEM = "10";
+  const char S11_0020[] PROGMEM = "28 FF D1 B8 67 18 1 4D";   // HEX-Adresse des Sensors 10
+  const char S11_0021[] PROGMEM = "10";
+  const char S11_0022[] PROGMEM = "28 FF A2 D9 67 18 1 71";   // HEX-Adresse des Sensors 11
+  const char S11_0023[] PROGMEM = "10";
+  const char S11_0024[] PROGMEM = "28 FF DD 91 67 18 1 8F";   // HEX-Adresse des Sensors 12
+  const char S11_0025[] PROGMEM = "10";
+  const char S11_0026[] PROGMEM = "28 FF C4 CD 67 18 1 CA";   // HEX-Adresse des Sensors 13
+  const char S11_0027[] PROGMEM = "10";
+  const char S11_0028[] PROGMEM = "28 FF E3 8D 67 18 1 83";   // HEX-Adresse des Sensors 14
+  const char S11_0029[] PROGMEM = "10";
+  const char S11_0030[] PROGMEM = "28 FF 99 AD 65 18 3 D0";   // HEX-Adresse des Sensors 15
+  const char S11_0031[] PROGMEM = "10";
+  const char S11_0032[] PROGMEM = "28 FF 6D 73 60 18 2 16";   // HEX-Adresse des Sensors 16
+  const char S11_0033[] PROGMEM = "10";
+  const char S11_0034[] PROGMEM = "28 FF 67 6D 60 18 2 86";   // HEX-Adresse des Sensors 17
+  const char S11_0035[] PROGMEM = "10";
+  const char S11_0036[] PROGMEM = "28 FF 54 74 60 18 2 E7";   // HEX-Adresse des Sensors 18
+  const char S11_0037[] PROGMEM = "10";
+  const char S11_0038[] PROGMEM = "28 FF D7 23 66 18 3 B3";   // HEX-Adresse des Sensors 19
+  const char S11_0039[] PROGMEM = "10";
+  const char S11_0040[] PROGMEM = "28 FF 7 43 60 18 2 F2";   // HEX-Adresse des Sensors 20
+  const char S11_0041[] PROGMEM = "10";
+  const char S11_0042[] PROGMEM = "28 FF 38 B6 65 18 3 82";   // HEX-Adresse des Sensors 21
+  const char S11_0043[] PROGMEM = "10";
+  const char S11_0044[] PROGMEM = "28 FF 89 BA 65 18 3 12";   // HEX-Adresse des Sensors 22
+  const char S11_0045[] PROGMEM = "10";
+  const char S11_0046[] PROGMEM = "28 FF 75 B6 65 18 3 87";   // HEX-Adresse des Sensors 23
+  const char S11_0047[] PROGMEM = "10";
+  const char S11_0048[] PROGMEM = "28 FF F9 62 60 18 2 9";   // HEX-Adresse des Sensors 24
+  const char S11_0049[] PROGMEM = "10";
+  const char S11_0050[] PROGMEM = "28 FF E0 BB 65 18 3 7F";   // HEX-Adresse des Sensors 25
+  const char S11_0051[] PROGMEM = "10";
+  const char S11_0052[] PROGMEM = "28 FF 3F B2 65 18 3 DD";   // HEX-Adresse des Sensors 26
+  const char S11_0053[] PROGMEM = "10";
+  const char S11_0054[] PROGMEM = "Adresse für Sensor 27";   // HEX-Adresse des Sensors 27
+  const char S11_0055[] PROGMEM = "10";
+  const char S11_0056[] PROGMEM = "Adresse für Sensor 28";   // HEX-Adresse des Sensors 28
+  const char S11_0057[] PROGMEM = "10";
+  const char S11_0058[] PROGMEM = "Adresse für Sensor 29";   // HEX-Adresse des Sensors 29
+  const char S11_0059[] PROGMEM = "10";
+  const char S11_0060[] PROGMEM = "Adresse für Sensor 30";   // HEX-Adresse des Sensors 30
+  const char S11_0061[] PROGMEM = "10";
+  const char S11_0062[] PROGMEM = "Adresse für Sensor 31";   // HEX-Adresse des Sensors 31
 
 //--------------------------------------------------------------------------------------------------------------
 // BEREICH  MNU = MENÜ    Ein Datensatz hat 4 ZEILEN=FELDER    
@@ -1915,10 +2065,25 @@ S09_0161,S09_0162,S09_0163,S09_0164,S09_0165,S09_0166,S09_0167,S09_0168,
   // Temperaturfühler DS1820
 S10_0001,S10_0002,S10_0003,S10_0004,S10_0005,S10_0006,S10_0007,S10_0008,S10_0009,S10_0010,
 S10_0011,S10_0012,S10_0013,S10_0014,S10_0015,S10_0016,S10_0017,S10_0018,S10_0019,S10_0020,
-S10_0021,S10_0022,S10_0023,S10_0024,
+S10_0021,S10_0022,S10_0023,S10_0024,S10_0025,S10_0026,S10_0027,S10_0028,S10_0029,S10_0030,
+S10_0031,S10_0032,S10_0033,S10_0034,S10_0035,S10_0036,S10_0037,S10_0038,S10_0039,S10_0040,
+S10_0041,S10_0042,S10_0043,S10_0044,S10_0045,S10_0046,S10_0047,S10_0048,S10_0049,S10_0050,
+S10_0051,S10_0052,S10_0053,S10_0054,S10_0055,S10_0056,S10_0057,S10_0058,S10_0059,S10_0060,
+S10_0061,S10_0062,S10_0063,S10_0064,S10_0065,S10_0066,S10_0067,S10_0068,S10_0069,S10_0070,
+S10_0071,S10_0072,S10_0073,S10_0074,S10_0075,S10_0076,S10_0077,S10_0078,S10_0079,S10_0080,
+S10_0081,S10_0082,S10_0083,S10_0084,S10_0085,S10_0086,S10_0087,S10_0088,S10_0089,S10_0090,
+S10_0091,S10_0092,S10_0093,S10_0094,S10_0095,S10_0096,S10_0097,S10_0098,S10_0099,S10_0100,
+S10_0101,S10_0102,S10_0103,S10_0104,S10_0105,S10_0106,S10_0107,S10_0108,S10_0109,S10_0110,
+S10_0111,S10_0112,S10_0113,S10_0114,S10_0115,S10_0116,S10_0117,S10_0118,S10_0119,S10_0120,
+S10_0121,S10_0122,S10_0123,S10_0124,
   // Temperaturfühler DS1820 Sprachunabhäng DATEN
 S11_0001,S11_0002,S11_0003,S11_0004,S11_0005,S11_0006,S11_0007,S11_0008,S11_0009,S11_0010,
-S11_0011,S11_0012,
+S11_0011,S11_0012,S11_0013,S11_0014,S11_0015,S11_0016,S11_0017,S11_0018,S11_0019,S11_0020,
+S11_0021,S11_0022,S11_0023,S11_0024,S11_0025,S11_0026,S11_0027,S11_0028,S11_0029,S11_0030,
+S11_0031,S11_0032,S11_0033,S11_0034,S11_0035,S11_0036,S11_0037,S11_0038,S11_0039,S11_0040,
+S11_0041,S11_0042,S11_0043,S11_0044,S11_0045,S11_0046,S11_0047,S11_0048,S11_0049,S11_0050,
+S11_0051,S11_0052,S11_0053,S11_0054,S11_0055,S11_0056,S11_0057,S11_0058,S11_0059,S11_0060,
+S11_0061,S11_0062,
 
  // Menüzeilen 
 S12_0001,S12_0002,S12_0003,S12_0004,S12_0005,S12_0006,S12_0007,S12_0008,S12_0009,S12_0010,
