@@ -31,7 +31,7 @@
 #define _S_FMD        _S07_OFFS 		    // Formatierungsangaben                               für sprintf( buf[], FORMATSTR, Wert1,2,...);
 #define _S_CMD        _S09_OFFS         // Kommandos  Funktionen Abfragen                     c ommando Beschreibungen
 #define _S_TMP        _S10_OFFS         // DS18-Temperatur Sensoren Sprachbereich             t emperaturfühler DS18 Namen, Adressen
-#define _S_TMD 		    _S11_OFFS 		    //      Temperatur Datenbereich                       t Daten
+#define _S_TMD 		  _S11_OFFS 		    //      Temperatur Datenbereich                       t Daten
 #define _S_MNU        _S12_OFFS         // Menues teilw. in verschiedenen Sprachen            Menü Experiment
 #define _S_MNS        _S13_OFFS         // Menües Sprungpunkte in/für die versch. Sprachen     
 #define _S_MEH        _S14_OFFS         // Mengeneinheiten in Sprachen                        Mengeneinheiten 
@@ -1270,6 +1270,9 @@
   const char S22_0005[] PROGMEM = "Compressor temperatur to high";  
   const char S22_0006[] PROGMEM = "Compr.Temp OVERHEAT";          
   const char S22_0007[] PROGMEM = "Err: 01 Compressor Temperature to High";  
+  
+  //Hier gehören noch viele Dummy Errors angelegt damit man später diese verwenden kann und nicht alles neu Nummerieren muss
+  
 // nächste Sprache 
   const char S22_0008[] PROGMEM = "Fehler-Name";                  // 00 Kurzname
   const char S22_0009[] PROGMEM = "Fehler-Beschreibung";          // Beschreibung
@@ -1353,6 +1356,9 @@
 
   const char S28_0016[] PROGMEM = "Push Button 8";                // 08 
   const char S28_0017[] PROGMEM = "switches machine 8 on";
+  
+  const char S28_0018[] PROGMEM = "Motorsafe";                	  // 09 
+  const char S28_0019[] PROGMEM = "When Motorsafe is fallen";
 
 //-----------------------------------------------------
 // Eingänge / Schalter DATEN
@@ -1376,7 +1382,7 @@
   const char S29_0005[] PROGMEM = "res";                                        //        reserviert
   const char S29_0006[] PROGMEM = "Einheit Bsp:[mV]";                           //        Einheit für Anzeigezwecke
                     
-  const char S29_0007[] PROGMEM = "n 57 0";                 // 01   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0007[] PROGMEM = "n 36 0";                 // 01   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0008[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0009[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0010[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
@@ -1384,7 +1390,7 @@
   const char S29_0012[] PROGMEM = "";
   const char S29_0013[] PROGMEM = "[.]";                    //      Einheit
                     
-  const char S29_0014[] PROGMEM = "n 57 1";                 // 02   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0014[] PROGMEM = "n 36 1";                 // 02   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0015[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0016[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0017[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
@@ -1392,7 +1398,7 @@
   const char S29_0019[] PROGMEM = "";
   const char S29_0020[] PROGMEM = "[.]";                    //      Einheit
 
-  const char S29_0021[] PROGMEM = "n 57 2";                 // 03   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0021[] PROGMEM = "n 36 2";                 // 03   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0022[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0023[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0024[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
@@ -1400,7 +1406,7 @@
   const char S29_0026[] PROGMEM = "";
   const char S29_0027[] PROGMEM = "[.]";                    //      Einheit
 
-  const char S29_0028[] PROGMEM = "n 57 3";                 // 04   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0028[] PROGMEM = "n 36 3";                 // 04   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0029[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0030[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0031[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
@@ -1408,7 +1414,7 @@
   const char S29_0033[] PROGMEM = "";
   const char S29_0034[] PROGMEM = "[.]";                    //      Einheit
 
-  const char S29_0035[] PROGMEM = "n 57 4";                 // 05   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0035[] PROGMEM = "n 36 4";                 // 05   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0036[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0037[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0038[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
@@ -1416,7 +1422,7 @@
   const char S29_0040[] PROGMEM = "";
   const char S29_0041[] PROGMEM = "[.]";                    //      Einheit
 
-  const char S29_0042[] PROGMEM = "n 57 5";                 // 06   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0042[] PROGMEM = "n 36 5";                 // 06   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0043[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0044[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0045[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
@@ -1424,7 +1430,7 @@
   const char S29_0047[] PROGMEM = "";
   const char S29_0048[] PROGMEM = "[.]";                    //      Einheit
 
-  const char S29_0049[] PROGMEM = "n 57 6";                 // 07   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0049[] PROGMEM = "n 36 6";                 // 07   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0050[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0051[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0052[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
@@ -1432,13 +1438,21 @@
   const char S29_0054[] PROGMEM = "";
   const char S29_0055[] PROGMEM = "[.]";                    //      Einheit
 
-  const char S29_0056[] PROGMEM = "n 57 7";                 // 08   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0056[] PROGMEM = "n 36 7";                 // 08   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
   const char S29_0057[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
   const char S29_0058[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
   const char S29_0059[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
   const char S29_0060[] PROGMEM = "1";                      //      Formel
   const char S29_0061[] PROGMEM = "";
   const char S29_0062[] PROGMEM = "[.]";                    //      Einheit
+  
+  const char S29_0063[] PROGMEM = "62";                 	// 09   n, ein Buchstabe bzw. etwas nicht nummerisches bedeutet daß kein arduino-PIN gemeint ist.
+  const char S29_0064[] PROGMEM = "1";                      //      INPUT_PULLUP nach Reset
+  const char S29_0065[] PROGMEM = "9";                      //      Ist ein DIGITAL-Pin 
+  const char S29_0066[] PROGMEM = "0";                      //      ist EIN wenn Wert LOW
+  const char S29_0067[] PROGMEM = "1";                      //      Formel
+  const char S29_0068[] PROGMEM = "";
+  const char S29_0069[] PROGMEM = "[.]";                    //      Einheit
 
   
 
@@ -1457,39 +1471,190 @@
  // ENGLISCHE Geräte Benennungen Beschreibungen 
   const char S30_0000[] PROGMEM = "Machine_Name________:";			// 00 Name 
   const char S30_0001[] PROGMEM = "Machine_Description_:";  		//    Beschreibung 
-  const char S30_0002[] PROGMEM = "ONBOARD LED";							  // 01
+  const char S30_0002[] PROGMEM = "ONBOARD LED";							  	// 01
   const char S30_0003[] PROGMEM = "LED fix mounted on the arduino mega"; 
-  const char S30_0004[] PROGMEM = "swivel motor 1 R";						// 02
-  const char S30_0005[] PROGMEM = "swivel Motor to rotage direction RIGHT";   
-  const char S30_0006[] PROGMEM = "Machine 03";									// 03
-  const char S30_0007[] PROGMEM = "description for Machine 03";   
-  const char S30_0008[] PROGMEM = "Machine 04";									// 04
-  const char S30_0009[] PROGMEM = "description for Machine 04";   
-  const char S30_0010[] PROGMEM = "Machine 05";									// 05
-  const char S30_0011[] PROGMEM = "description for Machine 05";   
-  const char S30_0012[] PROGMEM = "Machine 06";									// 06
-  const char S30_0013[] PROGMEM = "description for Machine 06";   
-  const char S30_0014[] PROGMEM = "Machine 07";									// 07
-  const char S30_0015[] PROGMEM = "description for Machine 07";     
+  const char S30_0004[] PROGMEM = "Status LED 1";								// 02
+  const char S30_0005[] PROGMEM = "Status LED 1 on the Front over Mosfet";   
+  const char S30_0006[] PROGMEM = "Status LED 2";									// 03
+  const char S30_0007[] PROGMEM = "Status LED 2 on the Front over Mosfet";   
+  const char S30_0008[] PROGMEM = "Status LED 3";									// 04
+  const char S30_0009[] PROGMEM = "Status LED 3 on the Front over Mosfet";   
+  const char S30_0010[] PROGMEM = "Status LED 4";									// 05
+  const char S30_0011[] PROGMEM = "Status LED 4 on the Front over Mosfet";   
+  const char S30_0012[] PROGMEM = "Status LED 5";									// 06
+  const char S30_0013[] PROGMEM = "Status LED 5 on the Front over Mosfet";   
+  const char S30_0014[] PROGMEM = "Status LED 6";									// 07
+  const char S30_0015[] PROGMEM = "Status LED 6 on the Front over Mosfet";     
+  const char S30_0016[] PROGMEM = "Status LED 7";									// 08
+  const char S30_0017[] PROGMEM = "Status LED 7 on the Front over Mosfet";  
+  const char S30_0018[] PROGMEM = "Status LED 8";									// 09
+  const char S30_0019[] PROGMEM = "Status LED 8 on the Front over Mosfet";
+  const char S30_0020[] PROGMEM = "SSR1";									// 10
+  const char S30_0021[] PROGMEM = "SSR1 over Mosfet";
+  const char S30_0022[] PROGMEM = "SSR2 and 3";									// 11
+  const char S30_0023[] PROGMEM = "SSR2 and 3 over one Mosfet";  
+  const char S30_0024[] PROGMEM = "SSR4 and 5";									// 12
+  const char S30_0025[] PROGMEM = "SSR4 and 5 over one Mosfet";
+  const char S30_0026[] PROGMEM = "FREE Mosfet";									// 13
+  const char S30_0027[] PROGMEM = "FREE Mosfet";
+  const char S30_0028[] PROGMEM = "Relais 1";									// 14
+  const char S30_0029[] PROGMEM = "Relais 1 over PCF Portexpander";
+  const char S30_0030[] PROGMEM = "Relais 2";									// 15
+  const char S30_0031[] PROGMEM = "Relais 2 over PCF Portexpander";
+  const char S30_0032[] PROGMEM = "Relais 3";									// 16
+  const char S30_0033[] PROGMEM = "Relais 3 over PCF Portexpander";
+  const char S30_0034[] PROGMEM = "Relais 4";									// 17
+  const char S30_0035[] PROGMEM = "Relais 4 over PCF Portexpander";
+  const char S30_0036[] PROGMEM = "Relais 5";									// 18
+  const char S30_0037[] PROGMEM = "Relais 5 over PCF Portexpander";
+  const char S30_0038[] PROGMEM = "Relais 6";									// 19
+  const char S30_0039[] PROGMEM = "Relais 6 over PCF Portexpander";
+  const char S30_0040[] PROGMEM = "Relais 7";									// 20
+  const char S30_0041[] PROGMEM = "Relais 7 over PCF Portexpander";
+  const char S30_0042[] PROGMEM = "Relais 8";									// 21
+  const char S30_0043[] PROGMEM = "Relais 8 over PCF Portexpander";
+  const char S30_0044[] PROGMEM = "Relais 9";									// 22
+  const char S30_0045[] PROGMEM = "Relais 9 over PCF Portexpander";
+  const char S30_0046[] PROGMEM = "Relais 10";									// 23
+  const char S30_0047[] PROGMEM = "Relais 10 over PCF Portexpander";
+  const char S30_0048[] PROGMEM = "Relais 11";									// 24
+  const char S30_0049[] PROGMEM = "Relais 11 over PCF Portexpander";
+  const char S30_0050[] PROGMEM = "Relais 12";									// 25
+  const char S30_0051[] PROGMEM = "Relais 12 over PCF Portexpander";  
+  const char S30_0052[] PROGMEM = "Relais 13";									// 26
+  const char S30_0053[] PROGMEM = "Relais 13 over PCF Portexpander";
+  const char S30_0054[] PROGMEM = "Relais 14";									// 27
+  const char S30_0055[] PROGMEM = "Relais 14 over PCF Portexpander";
+  const char S30_0056[] PROGMEM = "Relais 15";									// 28
+  const char S30_0057[] PROGMEM = "Relais 15 over PCF Portexpander";
+  const char S30_0058[] PROGMEM = "Relais 16";									// 29
+  const char S30_0059[] PROGMEM = "Relais 16 over PCF Portexpander";
+  const char S30_0060[] PROGMEM = "Relais 17";									// 30
+  const char S30_0061[] PROGMEM = "Relais 17 over PCF Portexpander";
+  const char S30_0062[] PROGMEM = "Relais 18";									// 31
+  const char S30_0063[] PROGMEM = "Relais 18 over PCF Portexpander";
+  const char S30_0064[] PROGMEM = "Relais 19";									// 32
+  const char S30_0065[] PROGMEM = "Relais 19 over PCF Portexpander";
+  const char S30_0066[] PROGMEM = "Relais 20";									// 33
+  const char S30_0067[] PROGMEM = "Relais 20 over PCF Portexpander";
+  const char S30_0068[] PROGMEM = "Relais 21";									// 34
+  const char S30_0069[] PROGMEM = "Relais 21 over PCF Portexpander";
+  const char S30_0070[] PROGMEM = "Relais 22";									// 35
+  const char S30_0071[] PROGMEM = "Relais 22 over PCF Portexpander";
+  const char S30_0072[] PROGMEM = "Relais 23";									// 36
+  const char S30_0073[] PROGMEM = "Relais 23 over PCF Portexpander";
+  const char S30_0074[] PROGMEM = "Relais 24";									// 37
+  const char S30_0075[] PROGMEM = "Relais 24 over PCF Portexpander";
+  const char S30_0076[] PROGMEM = "Relais 25";									// 38
+  const char S30_0077[] PROGMEM = "Relais 25 over PCF Portexpander";
+  const char S30_0078[] PROGMEM = "Relais 26";									// 39
+  const char S30_0079[] PROGMEM = "Relais 26 over PCF Portexpander";
+  const char S30_0080[] PROGMEM = "Relais 27";									// 40
+  const char S30_0081[] PROGMEM = "Relais 27 over PCF Portexpander";
+  const char S30_0082[] PROGMEM = "Relais 28";									// 41
+  const char S30_0083[] PROGMEM = "Relais 28 over PCF Portexpander";
+  const char S30_0084[] PROGMEM = "Relais 29";									// 42
+  const char S30_0085[] PROGMEM = "Relais 29 over PCF Portexpander";
+  const char S30_0086[] PROGMEM = "Relais 30";									// 43
+  const char S30_0087[] PROGMEM = "Relais 30 over PCF Portexpander";
+  const char S30_0088[] PROGMEM = "Relais 31";									// 44
+  const char S30_0089[] PROGMEM = "Relais 31 over PCF Portexpander";
+  const char S30_0090[] PROGMEM = "Relais 32";									// 45
+  const char S30_0091[] PROGMEM = "Relais 32 over PCF Portexpander";
+
  // DEUTSCHE Geräte Benennung 
-  const char S30_0016[] PROGMEM = "Maschine_Name________:";			// 00 Name 
-  const char S30_0017[] PROGMEM = "Maschine_Beschreibung:"; 		//    Beschreibung 
-  const char S30_0018[] PROGMEM = "FIXE arduino LED";						// 01
-  const char S30_0019[] PROGMEM = "fest auf dem arduino Board gelötete LED"; 
-  const char S30_0020[] PROGMEM = "Schwenkmotor 1 L";								// 02
-  const char S30_0021[] PROGMEM = "Beschreibung für Maschine 02";   
-  const char S30_0022[] PROGMEM = "Schwenkmotor 1 R";									// 03
-  const char S30_0023[] PROGMEM = "Beschreibung für Maschine 03";   
-  const char S30_0024[] PROGMEM = "Schwenkmotor 2 L";									// 04
-  const char S30_0025[] PROGMEM = "Beschreibung für Maschine 04";   
-  const char S30_0026[] PROGMEM = "Schwenkmotor 2 R";									// 05
-  const char S30_0027[] PROGMEM = "Beschreibung für Maschine 05";   
-  
-  const char S30_0028[] PROGMEM = "Haltemagnet 1";									// 06
-  const char S30_0029[] PROGMEM = "Beschreibung für Maschine 06";   
-  
-  const char S30_0030[] PROGMEM = "Wasserpumpe 07";									// 07
-  const char S30_0031[] PROGMEM = "Beschreibung für Maschine 07";     
+  const char S30_0092[] PROGMEM = "Maschine_Name________:";			// 00 Name 
+  const char S30_0093[] PROGMEM = "Maschine_Beschreibung:"; 		//    Beschreibung 
+  const char S30_0094[] PROGMEM = "FIXE arduino LED";						// 01
+  const char S30_0095[] PROGMEM = "fest auf dem arduino Board gelötete LED"; 
+  const char S30_0096[] PROGMEM = "Status LED 1";								// 02
+  const char S30_0097[] PROGMEM = "Status LED 1 an der Front über Mosfet";   
+  const char S30_0098[] PROGMEM = "Status LED 2";									// 03
+  const char S30_0099[] PROGMEM = "Status LED 2 an der Front über Mosfet";   
+  const char S30_0100[] PROGMEM = "Status LED 3";									// 04
+  const char S30_0101[] PROGMEM = "Status LED 3 an der Front über Mosfet";   
+  const char S30_0102[] PROGMEM = "Status LED 4";									// 05
+  const char S30_0103[] PROGMEM = "Status LED 4 an der Front über Mosfet";    
+  const char S30_0104[] PROGMEM = "Status LED 5";									// 06
+  const char S30_0105[] PROGMEM = "Status LED 5 an der Front über Mosfet";    
+  const char S30_0106[] PROGMEM = "Status LED 6";									// 07
+  const char S30_0107[] PROGMEM = "Status LED 6 an der Front über Mosfet";    
+  const char S30_0108[] PROGMEM = "Status LED 7";									// 08
+  const char S30_0109[] PROGMEM = "Status LED 7 an der Front über Mosfet";   
+  const char S30_0110[] PROGMEM = "Status LED 8";									// 09
+  const char S30_0111[] PROGMEM = "Status LED 8 an der Front über Mosfet";    
+  const char S30_0112[] PROGMEM = "SSR1";									// 10
+  const char S30_0113[] PROGMEM = "SSR1 über Mosfet";    
+  const char S30_0114[] PROGMEM = "SSR2 und 3";									// 11
+  const char S30_0115[] PROGMEM = "SSR2 und 3 über Mosfet"; 
+  const char S30_0116[] PROGMEM = "SSR4 und 5";									// 12
+  const char S30_0117[] PROGMEM = "SSR4 und 5 über Mosfet";    
+  const char S30_0118[] PROGMEM = "FREE Mosfet";									// 13
+  const char S30_0119[] PROGMEM = "FREE Mosfet";   
+  const char S30_0120[] PROGMEM = "Relais 1";									// 14
+  const char S30_0121[] PROGMEM = "Relais 1 über PCF Portexpander";
+  const char S30_0122[] PROGMEM = "Relais 2";									// 15
+  const char S30_0123[] PROGMEM = "Relais 2 über PCF Portexpander";
+  const char S30_0124[] PROGMEM = "Relais 3";									// 16
+  const char S30_0125[] PROGMEM = "Relais 3 über PCF Portexpander";
+  const char S30_0126[] PROGMEM = "Relais 4";									// 17
+  const char S30_0127[] PROGMEM = "Relais 4 über PCF Portexpander";
+  const char S30_0128[] PROGMEM = "Relais 5";									// 18
+  const char S30_0129[] PROGMEM = "Relais 5 über PCF Portexpander";
+  const char S30_0130[] PROGMEM = "Relais 6";									// 19
+  const char S30_0131[] PROGMEM = "Relais 6 über PCF Portexpander";
+  const char S30_0132[] PROGMEM = "Relais 7";									// 20
+  const char S30_0133[] PROGMEM = "Relais 7 über PCF Portexpander";
+  const char S30_0134[] PROGMEM = "Relais 8";									// 21
+  const char S30_0135[] PROGMEM = "Relais 8 über PCF Portexpander";
+  const char S30_0136[] PROGMEM = "Relais 9";									// 22
+  const char S30_0137[] PROGMEM = "Relais 9 über PCF Portexpander";
+  const char S30_0138[] PROGMEM = "Relais 10";									// 23
+  const char S30_0139[] PROGMEM = "Relais 10 über PCF Portexpander";
+  const char S30_0140[] PROGMEM = "Relais 11";									// 24
+  const char S30_0141[] PROGMEM = "Relais 11 über PCF Portexpander";
+  const char S30_0142[] PROGMEM = "Relais 12";									// 25
+  const char S30_0143[] PROGMEM = "Relais 12 über PCF Portexpander";  
+  const char S30_0144[] PROGMEM = "Relais 13";									// 26
+  const char S30_0145[] PROGMEM = "Relais 13 über PCF Portexpander";
+  const char S30_0146[] PROGMEM = "Relais 14";									// 27
+  const char S30_0147[] PROGMEM = "Relais 14 über PCF Portexpander";
+  const char S30_0148[] PROGMEM = "Relais 15";									// 28
+  const char S30_0149[] PROGMEM = "Relais 15 über PCF Portexpander";
+  const char S30_0150[] PROGMEM = "Relais 16";									// 29
+  const char S30_0151[] PROGMEM = "Relais 16 über PCF Portexpander";
+  const char S30_0152[] PROGMEM = "Relais 17";									// 30
+  const char S30_0153[] PROGMEM = "Relais 17 über PCF Portexpander";
+  const char S30_0154[] PROGMEM = "Relais 18";									// 31
+  const char S30_0155[] PROGMEM = "Relais 18 über PCF Portexpander";
+  const char S30_0156[] PROGMEM = "Relais 19";									// 32
+  const char S30_0157[] PROGMEM = "Relais 19 über PCF Portexpander";
+  const char S30_0158[] PROGMEM = "Relais 20";									// 33
+  const char S30_0159[] PROGMEM = "Relais 20 über PCF Portexpander";
+  const char S30_0160[] PROGMEM = "Relais 21";									// 34
+  const char S30_0161[] PROGMEM = "Relais 21 über PCF Portexpander";
+  const char S30_0162[] PROGMEM = "Relais 22";									// 35
+  const char S30_0163[] PROGMEM = "Relais 22 über PCF Portexpander";
+  const char S30_0164[] PROGMEM = "Relais 23";									// 36
+  const char S30_0165[] PROGMEM = "Relais 23 über PCF Portexpander";
+  const char S30_0166[] PROGMEM = "Relais 24";									// 37
+  const char S30_0167[] PROGMEM = "Relais 24 über PCF Portexpander";
+  const char S30_0168[] PROGMEM = "Relais 25";									// 38
+  const char S30_0169[] PROGMEM = "Relais 25 über PCF Portexpander";
+  const char S30_0170[] PROGMEM = "Relais 26";									// 39
+  const char S30_0171[] PROGMEM = "Relais 26 über PCF Portexpander";
+  const char S30_0172[] PROGMEM = "Relais 27";									// 40
+  const char S30_0173[] PROGMEM = "Relais 27 über PCF Portexpander";
+  const char S30_0174[] PROGMEM = "Relais 28";									// 41
+  const char S30_0175[] PROGMEM = "Relais 28 über PCF Portexpander";
+  const char S30_0176[] PROGMEM = "Relais 29";									// 42
+  const char S30_0177[] PROGMEM = "Relais 29 über PCF Portexpander";
+  const char S30_0178[] PROGMEM = "Relais 30";									// 43
+  const char S30_0179[] PROGMEM = "Relais 30 über PCF Portexpander";
+  const char S30_0180[] PROGMEM = "Relais 31";									// 44
+  const char S30_0181[] PROGMEM = "Relais 31 über PCF Portexpander";
+  const char S30_0182[] PROGMEM = "Relais 32";									// 45
+  const char S30_0183[] PROGMEM = "Relais 32 über PCF Portexpander";
 //-------------------------------------------------------------------------------------
 // BEREICH  GERÄTE   technisches  Sprachunabhängig 
 // Initialize_Machines(byte FromMachNr, byte ToMachNr) 
@@ -1511,29 +1676,183 @@
   const char S31_0004[] PROGMEM = "1"; 										  //          OFF nach BOOT / RESET / PWR-ON 
   const char S31_0005[] PROGMEM = "1";   										//          ist AN wenn Pin HIGH ist 
 
-  const char S31_0006[] PROGMEM = "n 56 0";									// 02       56 ist die Adresse vom PCF-Modul  1 ist der Pin am PCF-Modul  Sch
-  const char S31_0007[] PROGMEM = "1";    // ON nach Reset
+  const char S31_0006[] PROGMEM = "22";									// 02 Stauts LED      
+  const char S31_0007[] PROGMEM = "1";    // OFF nach Reset
   const char S31_0008[] PROGMEM = "0";    // ON when PIN is LOW
   
-  const char S31_0009[] PROGMEM = "n 56 1";									// 03        
+  const char S31_0009[] PROGMEM = "23";									// 03        
   const char S31_0010[] PROGMEM = "1";    // OFF nach Reset
   const char S31_0011[] PROGMEM = "0";    // LOW = ON 
   
-  const char S31_0012[] PROGMEM = "n 56 2";									// 04        
+  const char S31_0012[] PROGMEM = "34";									// 04        
   const char S31_0013[] PROGMEM = "1";   
   const char S31_0014[] PROGMEM = "0";   
   
-  const char S31_0015[] PROGMEM = "n 56 3";									// 05        
+  const char S31_0015[] PROGMEM = "25";									// 05        
   const char S31_0016[] PROGMEM = "1";   
   const char S31_0017[] PROGMEM = "0";   
   
-  const char S31_0018[] PROGMEM = "2 ";									// 06        Pin 2 am arduino direkt  Haltemagnet über Mosfet Modul
+  const char S31_0018[] PROGMEM = "26";									// 06
   const char S31_0019[] PROGMEM = "1";   
   const char S31_0020[] PROGMEM = "0";   
   
-  const char S31_0021[] PROGMEM = "  6 ";									// 07        Pin 6 am arduino direkt  Wasserpumpe  
-  const char S31_0022[] PROGMEM = "1";    // PWM nach Reset            
-  const char S31_0023[] PROGMEM = "0";   
+  const char S31_0021[] PROGMEM = "27";									// 07
+  const char S31_0022[] PROGMEM = "1";                
+  const char S31_0023[] PROGMEM = "0"; 
+
+  const char S31_0024[] PROGMEM = "28";									// 08		
+  const char S31_0025[] PROGMEM = "1";	
+  const char S31_0026[] PROGMEM = "0";
+  
+  const char S31_0027[] PROGMEM = "29";									// 09	
+  const char S31_0028[] PROGMEM = "1";		
+  const char S31_0029[] PROGMEM = "0";
+  
+  const char S31_0030[] PROGMEM = "30";									// 10	SSR1
+  const char S31_0031[] PROGMEM = "1";		
+  const char S31_0032[] PROGMEM = "0";
+  
+  const char S31_0033[] PROGMEM = "31";									// 11	SSR2,3
+  const char S31_0034[] PROGMEM = "1";	
+  const char S31_0035[] PROGMEM = "0";
+  
+  const char S31_0036[] PROGMEM = "32";									// 12	SSR4,5
+  const char S31_0037[] PROGMEM = "1";	
+  const char S31_0038[] PROGMEM = "0";
+  
+  const char S31_0039[] PROGMEM = "33";									// 13	FREI
+  const char S31_0040[] PROGMEM = "1";		
+  const char S31_0041[] PROGMEM = "0";
+		
+  const char S31_0042[] PROGMEM = "n 32 0";								// Relais 1 32 ist die Adresse vom PCF-Modul  0 ist der Pin am PCF-Modul  Sch
+  const char S31_0043[] PROGMEM = "1";
+  const char S31_0044[] PROGMEM = "0";
+  
+  const char S31_0045[] PROGMEM = "n 32 1";
+  const char S31_0046[] PROGMEM = "1";
+  const char S31_0047[] PROGMEM = "0";
+  
+  const char S31_0048[] PROGMEM = "n 32 2";
+  const char S31_0049[] PROGMEM = "1";
+  const char S31_0050[] PROGMEM = "0";
+  
+  const char S31_0051[] PROGMEM = "n 32 3";
+  const char S31_0052[] PROGMEM = "1";
+  const char S31_0053[] PROGMEM = "0";
+  
+  const char S31_0054[] PROGMEM = "n 32 4";
+  const char S31_0055[] PROGMEM = "1";
+  const char S31_0056[] PROGMEM = "0";
+  
+  const char S31_0057[] PROGMEM = "n 32 5";
+  const char S31_0058[] PROGMEM = "1";
+  const char S31_0059[] PROGMEM = "0";
+  
+  const char S31_0060[] PROGMEM = "n 32 6";
+  const char S31_0061[] PROGMEM = "1";
+  const char S31_0062[] PROGMEM = "0";
+  
+  const char S31_0063[] PROGMEM = "n 32 7";
+  const char S31_0064[] PROGMEM = "1";
+  const char S31_0065[] PROGMEM = "0";
+  
+  const char S31_0066[] PROGMEM = "n 33 0";								// Relais 9
+  const char S31_0067[] PROGMEM = "1";
+  const char S31_0068[] PROGMEM = "0";
+  
+  const char S31_0069[] PROGMEM = "n 33 1";
+  const char S31_0070[] PROGMEM = "1";
+  const char S31_0071[] PROGMEM = "0";
+  
+  const char S31_0072[] PROGMEM = "n 33 2";
+  const char S31_0073[] PROGMEM = "1";
+  const char S31_0074[] PROGMEM = "0";
+  
+  const char S31_0075[] PROGMEM = "n 33 3";
+  const char S31_0076[] PROGMEM = "1";
+  const char S31_0077[] PROGMEM = "0";
+  
+  const char S31_0078[] PROGMEM = "n 33 4";
+  const char S31_0079[] PROGMEM = "1";
+  const char S31_0080[] PROGMEM = "0";
+  
+  const char S31_0081[] PROGMEM = "n 33 5";
+  const char S31_0082[] PROGMEM = "1";
+  const char S31_0083[] PROGMEM = "0";
+  
+  const char S31_0084[] PROGMEM = "n 33 6";
+  const char S31_0085[] PROGMEM = "1";
+  const char S31_0086[] PROGMEM = "0";
+  
+  const char S31_0087[] PROGMEM = "n 33 7";
+  const char S31_0088[] PROGMEM = "1";
+  const char S31_0089[] PROGMEM = "0";
+  
+  const char S31_0090[] PROGMEM = "n 34 0";								// Relais 17
+  const char S31_0091[] PROGMEM = "1";
+  const char S31_0092[] PROGMEM = "0";
+  
+  const char S31_0093[] PROGMEM = "n 34 1";
+  const char S31_0094[] PROGMEM = "1";
+  const char S31_0095[] PROGMEM = "0";
+  
+  const char S31_0096[] PROGMEM = "n 34 2";
+  const char S31_0097[] PROGMEM = "1";
+  const char S31_0098[] PROGMEM = "0";
+  
+  const char S31_0099[] PROGMEM = "n 34 3";
+  const char S31_0100[] PROGMEM = "1";
+  const char S31_0101[] PROGMEM = "0";
+  
+  const char S31_0102[] PROGMEM = "n 34 4";
+  const char S31_0103[] PROGMEM = "1";
+  const char S31_0104[] PROGMEM = "0";
+  
+  const char S31_0105[] PROGMEM = "n 34 5";
+  const char S31_0106[] PROGMEM = "1";
+  const char S31_0107[] PROGMEM = "0";
+  
+  const char S31_0108[] PROGMEM = "n 34 6";
+  const char S31_0109[] PROGMEM = "1";
+  const char S31_0110[] PROGMEM = "0";
+  
+  const char S31_0111[] PROGMEM = "n 34 7";
+  const char S31_0112[] PROGMEM = "1";
+  const char S31_0113[] PROGMEM = "0";
+  
+  const char S31_0114[] PROGMEM = "n 35 0";								// Relais 25
+  const char S31_0115[] PROGMEM = "1";
+  const char S31_0116[] PROGMEM = "0";
+  
+  const char S31_0117[] PROGMEM = "n 35 1";
+  const char S31_0118[] PROGMEM = "1";
+  const char S31_0119[] PROGMEM = "0";
+  
+  const char S31_0120[] PROGMEM = "n 35 2";
+  const char S31_0121[] PROGMEM = "1";
+  const char S31_0122[] PROGMEM = "0";
+  
+  const char S31_0123[] PROGMEM = "n 35 3 ";
+  const char S31_0124[] PROGMEM = "1";
+  const char S31_0125[] PROGMEM = "0";
+  
+  const char S31_0126[] PROGMEM = "n 35 4";
+  const char S31_0127[] PROGMEM = "1";
+  const char S31_0128[] PROGMEM = "0";
+  
+  const char S31_0129[] PROGMEM = "n 35 5";
+  const char S31_0130[] PROGMEM = "1";
+  const char S31_0131[] PROGMEM = "0";
+  
+  const char S31_0132[] PROGMEM = "n 35 6";
+  const char S31_0133[] PROGMEM = "1";
+  const char S31_0134[] PROGMEM = "0";
+  
+  const char S31_0135[] PROGMEM = "n 35 7";								// Relais 32
+  const char S31_0136[] PROGMEM = "1";
+  const char S31_0137[] PROGMEM = "0";
+
+ 
   
 //-------------------------------------------------------------------------------------------
 // BEREICH  KOMBINATIONEN = Gerätekombinationen  NAMEN Beschreibungen  Sprachabhängiger Teil 
@@ -2152,7 +2471,7 @@ S23_0000,S23_0001,
 
    // Eingänge / SCHALTER Sprachabhängig 
 S28_0000,S28_0001,S28_0002,S28_0003,S28_0004,S28_0005,S28_0006,S28_0007,S28_0008,S28_0009,
-S28_0010,S28_0011,S28_0012,S28_0013,S28_0014,S28_0015,S28_0016,S28_0017,
+S28_0010,S28_0011,S28_0012,S28_0013,S28_0014,S28_0015,S28_0016,S28_0017,S28_0018,S28_0019,
 
    // Eingänge / SCHALTER Daten 
 S29_0000,S29_0001,S29_0002,S29_0003,S29_0004,S29_0005,S29_0006,S29_0007,S29_0008,S29_0009,
@@ -2161,18 +2480,46 @@ S29_0020,S29_0021,S29_0022,S29_0023,S29_0024,S29_0025,S29_0026,S29_0027,S29_0028
 S29_0030,S29_0031,S29_0032,S29_0033,S29_0034,S29_0035,S29_0036,S29_0037,S29_0038,S29_0039,
 S29_0040,S29_0041,S29_0042,S29_0043,S29_0044,S29_0045,S29_0046,S29_0047,S29_0048,S29_0049,
 S29_0050,S29_0051,S29_0052,S29_0053,S29_0054,S29_0055,S29_0056,S29_0057,S29_0058,S29_0059,
-S29_0060,S29_0061,S29_0062,
+S29_0060,S29_0061,S29_0062,S29_0063,S29_0064,S29_0065,S29_0066,S29_0067,S29_0068,S29_0069,
 
   // S19 frei
   // MASCHINEN Sprachabhängiger Teil 
 S30_0000,S30_0001,S30_0002,S30_0003,S30_0004,S30_0005,S30_0006,S30_0007,S30_0008,S30_0009,
 S30_0010,S30_0011,S30_0012,S30_0013,S30_0014,S30_0015,S30_0016,S30_0017,S30_0018,S30_0019,
 S30_0020,S30_0021,S30_0022,S30_0023,S30_0024,S30_0025,S30_0026,S30_0027,S30_0028,S30_0029,
-S30_0030,S30_0031,
+S30_0030,S30_0031,S30_0032,S30_0033,S30_0034,S30_0035,S30_0036,S30_0037,S30_0038,S30_0039,
+S30_0040,S30_0041,S30_0042,S30_0043,S30_0044,S30_0045,S30_0046,S30_0047,S30_0048,S30_0049,
+S30_0050,S30_0051,S30_0052,S30_0053,S30_0054,S30_0055,S30_0056,S30_0057,S30_0058,S30_0059,
+S30_0060,S30_0061,S30_0062,S30_0063,S30_0064,S30_0065,S30_0066,S30_0067,S30_0068,S30_0069,
+S30_0070,S30_0071,S30_0072,S30_0073,S30_0074,S30_0075,S30_0076,S30_0077,S30_0078,S30_0079,
+S30_0080,S30_0081,S30_0082,S30_0083,S30_0084,S30_0085,S30_0086,S30_0087,S30_0088,S30_0089,
+S30_0090,S30_0091,S30_0092,S30_0093,S30_0094,S30_0095,S30_0096,S30_0097,S30_0098,S30_0099,
+S30_0100,S30_0101,S30_0102,S30_0103,S30_0104,S30_0105,S30_0106,S30_0107,S30_0108,S30_0109,
+S30_0110,S30_0111,S30_0112,S30_0113,S30_0114,S30_0115,S30_0116,S30_0117,S30_0118,S30_0119,
+S30_0120,S30_0121,S30_0122,S30_0123,S30_0124,S30_0125,S30_0126,S30_0127,S30_0128,S30_0129,
+S30_0130,S30_0131,S30_0132,S30_0133,S30_0134,S30_0135,S30_0136,S30_0137,S30_0138,S30_0139,
+S30_0140,S30_0141,S30_0142,S30_0143,S30_0144,S30_0145,S30_0146,S30_0147,S30_0148,S30_0149,
+S30_0150,S30_0151,S30_0152,S30_0153,S30_0154,S30_0155,S30_0156,S30_0157,S30_0158,S30_0159,
+S30_0160,S30_0161,S30_0162,S30_0163,S30_0164,S30_0165,S30_0166,S30_0167,S30_0168,S30_0169,
+S30_0170,S30_0171,S30_0172,S30_0173,S30_0174,S30_0175,S30_0176,S30_0177,S30_0178,S30_0179,
+S30_0180,S30_0181,S30_0182,S30_0183,
+
   // MASCHINEN nur Daten sprachunabhängig
 S31_0000,S31_0001,S31_0002,S31_0003,S31_0004,S31_0005,S31_0006,S31_0007,S31_0008,S31_0009,
 S31_0010,S31_0011,S31_0012,S31_0013,S31_0014,S31_0015,S31_0016,S31_0017,S31_0018,S31_0019,
-S31_0020,S31_0021,S31_0022,S31_0023,
+S31_0020,S31_0021,S31_0022,S31_0023,S31_0024,S31_0025,S31_0026,S31_0027,S31_0028,S31_0029,
+S31_0030,S31_0031,S31_0032,S31_0033,S31_0034,S31_0035,S31_0036,S31_0037,S31_0038,S31_0039,
+S31_0040,S31_0041,S31_0042,S31_0043,S31_0044,S31_0045,S31_0046,S31_0047,S31_0048,S31_0049,
+S31_0050,S31_0051,S31_0052,S31_0053,S31_0054,S31_0055,S31_0056,S31_0057,S31_0058,S31_0059,
+S31_0060,S31_0061,S31_0062,S31_0063,S31_0064,S31_0065,S31_0066,S31_0067,S31_0068,S31_0069,
+S31_0070,S31_0071,S31_0072,S31_0073,S31_0074,S31_0075,S31_0076,S31_0077,S31_0078,S31_0079,
+S31_0080,S31_0081,S31_0082,S31_0083,S31_0084,S31_0085,S31_0086,S31_0087,S31_0088,S31_0089,
+S31_0090,S31_0091,S31_0092,S31_0093,S31_0094,S31_0095,S31_0096,S31_0097,S31_0098,S31_0099,
+S31_0100,S31_0101,S31_0102,S31_0103,S31_0104,S31_0105,S31_0106,S31_0107,S31_0108,S31_0109,
+S31_0110,S31_0111,S31_0112,S31_0113,S31_0114,S31_0115,S31_0116,S31_0117,S31_0118,S31_0119,
+S31_0120,S31_0121,S31_0122,S31_0123,S31_0124,S31_0125,S31_0126,S31_0127,S31_0128,S31_0129,
+S31_0130,S31_0131,S31_0132,S31_0133,
+
   // KOMBINATIONEN Sprachabhängig
 S32_0000,S32_0001,S32_0002,S32_0003,S32_0004,S32_0005,S32_0006,S32_0007,S32_0008,S32_0009,
 S32_0010,S32_0011,S32_0012,S32_0013,S32_0014,S32_0015,S32_0016,S32_0017,S32_0018,S32_0019,
