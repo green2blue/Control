@@ -628,7 +628,7 @@
 //-------------------------------------------------------------------------
 #define _S11_OFFS      _S10_OFFS +_S10_RECORDS *_S10_FIELDS + _S10_RECORDS*_S10_FIELDS*_S10_LNGCOUNT   
 #define _S11_FIELDS     2     // Anzahl Felder pro Datensatz
-#define _S11_RECORDS    31     // Anzahl Datensätze (muß Synchron mit _S10_ Abschnitt sein !!)
+#define _S11_RECORDS    _S10_RECORDS     // Anzahl Datensätze (muß Synchron mit _S10_ Abschnitt sein !!)
 #define _S11_LNGCOUNT   0     // Anzahl zusätzlicher Sprachen für diesen Bereich
   const char S11_0001[] PROGMEM = "10";                     // Pin-Nummer für Sensor 01
   const char S11_0002[] PROGMEM = "28 FF 60 74 60 18 2 7C";   // HEX-Adresse des Sensors 01
@@ -1328,7 +1328,7 @@
 //----------------------------------------------------------------
 #define _S28_OFFS       _S27_OFFS + _S27_RECORDS * _S27_FIELDS  + _S27_RECORDS*_S27_FIELDS*_S27_LNGCOUNT   
 #define _S28_FIELDS     2 
-#define _S28_RECORDS    9
+#define _S28_RECORDS    10
 #define _S28_LNGCOUNT   0   // zusätzliche Sprachen  
   const char S28_0000[] PROGMEM = "Input/Switch Name";            // 00 Name 
   const char S28_0001[] PROGMEM = "Input/Switch Description";     //    Beschreibung 
@@ -1364,7 +1364,7 @@
 // Eingänge / Schalter DATEN
 //-----------------------------------------------------
 #define _S29_OFFS 			_S28_OFFS + _S28_RECORDS * _S28_FIELDS  + _S28_RECORDS*_S28_FIELDS*_S28_LNGCOUNT   
-#define _S29_FIELDS 	  7
+#define _S29_FIELDS 	  9
 #define _S29_RECORDS    _S28_RECORDS
 #define _S29_LNGCOUNT   0   // zusätzliche Sprachen  
 #define _S29_PIN_ADR_BIT 0  // PIN I2C-ADR I2C-BIT
@@ -1463,7 +1463,7 @@
 #define _MACHINE_COUNT  _S30_RECORDS 
 #define _S30_OFFS 			_S29_OFFS + _S29_RECORDS * _S29_FIELDS  + _S29_RECORDS*_S29_FIELDS*_S29_LNGCOUNT   
 #define _S30_FIELDS 	  2 
-#define _S30_RECORDS    8
+#define _S30_RECORDS    46
 #define _S30_LNGCOUNT   1
 // Feldnamen / FeldPositionen
 #define _S30_NAME       0   // Maschinen-Name
@@ -1724,131 +1724,131 @@
   const char S31_0040[] PROGMEM = "1";		
   const char S31_0041[] PROGMEM = "0";
 		
-  const char S31_0042[] PROGMEM = "n 32 0";								// Relais 1 32 ist die Adresse vom PCF-Modul  0 ist der Pin am PCF-Modul  Sch
+  const char S31_0042[] PROGMEM = "n 32 0";								// 14 Relais 1 32 ist die Adresse vom PCF-Modul  0 ist der Pin am PCF-Modul  Sch
   const char S31_0043[] PROGMEM = "1";
   const char S31_0044[] PROGMEM = "0";
   
-  const char S31_0045[] PROGMEM = "n 32 1";
+  const char S31_0045[] PROGMEM = "n 32 1";									// 15
   const char S31_0046[] PROGMEM = "1";
   const char S31_0047[] PROGMEM = "0";
   
-  const char S31_0048[] PROGMEM = "n 32 2";
+  const char S31_0048[] PROGMEM = "n 32 2";									// 16
   const char S31_0049[] PROGMEM = "1";
   const char S31_0050[] PROGMEM = "0";
   
-  const char S31_0051[] PROGMEM = "n 32 3";
+  const char S31_0051[] PROGMEM = "n 32 3";									// 17
   const char S31_0052[] PROGMEM = "1";
   const char S31_0053[] PROGMEM = "0";
   
-  const char S31_0054[] PROGMEM = "n 32 4";
+  const char S31_0054[] PROGMEM = "n 32 4";									// 18
   const char S31_0055[] PROGMEM = "1";
   const char S31_0056[] PROGMEM = "0";
   
-  const char S31_0057[] PROGMEM = "n 32 5";
+  const char S31_0057[] PROGMEM = "n 32 5";									// 19
   const char S31_0058[] PROGMEM = "1";
   const char S31_0059[] PROGMEM = "0";
   
-  const char S31_0060[] PROGMEM = "n 32 6";
+  const char S31_0060[] PROGMEM = "n 32 6";									// 20
   const char S31_0061[] PROGMEM = "1";
   const char S31_0062[] PROGMEM = "0";
   
-  const char S31_0063[] PROGMEM = "n 32 7";
+  const char S31_0063[] PROGMEM = "n 32 7";									// 21
   const char S31_0064[] PROGMEM = "1";
   const char S31_0065[] PROGMEM = "0";
   
-  const char S31_0066[] PROGMEM = "n 33 0";								// Relais 9
+  const char S31_0066[] PROGMEM = "n 33 0";								// 22 Relais 9
   const char S31_0067[] PROGMEM = "1";
   const char S31_0068[] PROGMEM = "0";
   
-  const char S31_0069[] PROGMEM = "n 33 1";
+  const char S31_0069[] PROGMEM = "n 33 1";									// 23
   const char S31_0070[] PROGMEM = "1";
   const char S31_0071[] PROGMEM = "0";
   
-  const char S31_0072[] PROGMEM = "n 33 2";
+  const char S31_0072[] PROGMEM = "n 33 2";									// 24
   const char S31_0073[] PROGMEM = "1";
   const char S31_0074[] PROGMEM = "0";
   
-  const char S31_0075[] PROGMEM = "n 33 3";
+  const char S31_0075[] PROGMEM = "n 33 3";									// 25
   const char S31_0076[] PROGMEM = "1";
   const char S31_0077[] PROGMEM = "0";
   
-  const char S31_0078[] PROGMEM = "n 33 4";
+  const char S31_0078[] PROGMEM = "n 33 4";									// 26
   const char S31_0079[] PROGMEM = "1";
   const char S31_0080[] PROGMEM = "0";
   
-  const char S31_0081[] PROGMEM = "n 33 5";
+  const char S31_0081[] PROGMEM = "n 33 5";									// 27
   const char S31_0082[] PROGMEM = "1";
   const char S31_0083[] PROGMEM = "0";
   
-  const char S31_0084[] PROGMEM = "n 33 6";
+  const char S31_0084[] PROGMEM = "n 33 6";									// 28
   const char S31_0085[] PROGMEM = "1";
   const char S31_0086[] PROGMEM = "0";
   
-  const char S31_0087[] PROGMEM = "n 33 7";
+  const char S31_0087[] PROGMEM = "n 33 7";									// 29
   const char S31_0088[] PROGMEM = "1";
   const char S31_0089[] PROGMEM = "0";
   
-  const char S31_0090[] PROGMEM = "n 34 0";								// Relais 17
+  const char S31_0090[] PROGMEM = "n 34 0";								// 30 Relais 17
   const char S31_0091[] PROGMEM = "1";
   const char S31_0092[] PROGMEM = "0";
   
-  const char S31_0093[] PROGMEM = "n 34 1";
+  const char S31_0093[] PROGMEM = "n 34 1";									// 31
   const char S31_0094[] PROGMEM = "1";
   const char S31_0095[] PROGMEM = "0";
   
-  const char S31_0096[] PROGMEM = "n 34 2";
+  const char S31_0096[] PROGMEM = "n 34 2";									// 32
   const char S31_0097[] PROGMEM = "1";
   const char S31_0098[] PROGMEM = "0";
   
-  const char S31_0099[] PROGMEM = "n 34 3";
+  const char S31_0099[] PROGMEM = "n 34 3";									// 33
   const char S31_0100[] PROGMEM = "1";
   const char S31_0101[] PROGMEM = "0";
   
-  const char S31_0102[] PROGMEM = "n 34 4";
+  const char S31_0102[] PROGMEM = "n 34 4";									// 34
   const char S31_0103[] PROGMEM = "1";
   const char S31_0104[] PROGMEM = "0";
   
-  const char S31_0105[] PROGMEM = "n 34 5";
+  const char S31_0105[] PROGMEM = "n 34 5";									// 35
   const char S31_0106[] PROGMEM = "1";
   const char S31_0107[] PROGMEM = "0";
   
-  const char S31_0108[] PROGMEM = "n 34 6";
+  const char S31_0108[] PROGMEM = "n 34 6";									// 36
   const char S31_0109[] PROGMEM = "1";
   const char S31_0110[] PROGMEM = "0";
   
-  const char S31_0111[] PROGMEM = "n 34 7";
+  const char S31_0111[] PROGMEM = "n 34 7";									// 37
   const char S31_0112[] PROGMEM = "1";
   const char S31_0113[] PROGMEM = "0";
   
-  const char S31_0114[] PROGMEM = "n 35 0";								// Relais 25
+  const char S31_0114[] PROGMEM = "n 35 0";								// 38 Relais 25
   const char S31_0115[] PROGMEM = "1";
   const char S31_0116[] PROGMEM = "0";
   
-  const char S31_0117[] PROGMEM = "n 35 1";
+  const char S31_0117[] PROGMEM = "n 35 1";									// 39
   const char S31_0118[] PROGMEM = "1";
   const char S31_0119[] PROGMEM = "0";
   
-  const char S31_0120[] PROGMEM = "n 35 2";
+  const char S31_0120[] PROGMEM = "n 35 2";									// 40
   const char S31_0121[] PROGMEM = "1";
   const char S31_0122[] PROGMEM = "0";
   
-  const char S31_0123[] PROGMEM = "n 35 3 ";
+  const char S31_0123[] PROGMEM = "n 35 3 ";									// 41
   const char S31_0124[] PROGMEM = "1";
   const char S31_0125[] PROGMEM = "0";
   
-  const char S31_0126[] PROGMEM = "n 35 4";
+  const char S31_0126[] PROGMEM = "n 35 4";									// 42
   const char S31_0127[] PROGMEM = "1";
   const char S31_0128[] PROGMEM = "0";
   
-  const char S31_0129[] PROGMEM = "n 35 5";
+  const char S31_0129[] PROGMEM = "n 35 5";									// 43
   const char S31_0130[] PROGMEM = "1";
   const char S31_0131[] PROGMEM = "0";
   
-  const char S31_0132[] PROGMEM = "n 35 6";
+  const char S31_0132[] PROGMEM = "n 35 6";									// 44
   const char S31_0133[] PROGMEM = "1";
   const char S31_0134[] PROGMEM = "0";
   
-  const char S31_0135[] PROGMEM = "n 35 7";								// Relais 32
+  const char S31_0135[] PROGMEM = "n 35 7";								// 45 Relais 32
   const char S31_0136[] PROGMEM = "1";
   const char S31_0137[] PROGMEM = "0";
 

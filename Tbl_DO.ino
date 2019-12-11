@@ -49,6 +49,7 @@ uint8_t Init_MACHINES(uint8_t VNr, uint8_t TNr) {
   uint8_t  ReadCnt=0;                                           // Anzahl gelesener Maschinen-Ausgänge
   int16_t  MDo=0;                                               // Befehl für das Gerät  0=nix  1=OFF 2=ON 3..255 PWM, ...
       //---Parametergrenzen prüfen und ggf. setzen---- 
+      Serial.print(F(" bin bei Init_Machines"));Serial.println(_MACHINE_COUNT);
   if (VNr==0)           {VNr= 1;}                               // es geht erst ab Maschine 1 los
   if (TNr > _MACHINE_COUNT) {TNr = _MACHINE_COUNT;}             // Maximale Anzahl Maschinen 
   if (TNr < VNr)     {TNr = VNr;}                               // wenn das BIS < VON dann wird BIS=VON es wird also nur EINE Maschine angesprochen 
@@ -56,11 +57,12 @@ uint8_t Init_MACHINES(uint8_t VNr, uint8_t TNr) {
   for (uint8_t i = VNr; i < TNr; i++) {                         // für jede Maschinen-Nummer
       ReadCnt ++;                                               // Zähler für Anzahl gelesener Maschinen erhöhen
       MDo=TBL_Int(T_Idx(_S_GED,i,_S31_AT_PWRON_DO));            // Aktion die für die Maschine beim BOOT auszuführen ist  0=NICHTS  1=OFF  2=ON  3..255 PWM
-
+      Serial.print(" Wir sind in der Forschleife ");Serial.print(i);Serial.print("   MDo ");Serial.println(MDo);
       if (MDo != 0) {                                           // wenn beim BOOT etwas zu tun ist
         InitCnt ++;
         TBL_Numbers(T_Idx(_S_GED,i,_S31_PIN_I2CADDR_BIT));      //  sbufferNr[0] PIN ;sbufferNr[1] I2C-Adr  ;sbufferNr[2] I2C-Bit
         if (sbufferNr[0] != 0) {                                // ein direkter arduino-PIN ist angesprochen
+          Serial.print(F(" VNr:"));Serial.print(VNr);Serial.print(F(" MDo:"));Serial.println(MDo);
           pinMode(sbufferNr[0],OUTPUT);                         // damit geht der PIN bereits sofort LOW und schaltet somit voll durch !
         }
         Machine_DO(i,MDo,0,0,0);                                // Maschinen-Nummer i, mache, fq, dauer, statusnichtmerken
