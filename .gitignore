@@ -64,6 +64,14 @@ avr-toolchain-*.zip
 /app/build/
 /arduino-core/build/
 ~*.xlsx
+Control.sln
+Control.vcxproj
+Control.vcxproj.filters
+Control.vcxproj.user
+~AutoRecover.Control.vcxproj
+/__vm/
+/.vs/
+
 
 manifest.mf
 nbbuild.xml
