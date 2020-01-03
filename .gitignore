@@ -64,7 +64,14 @@ avr-toolchain-*.zip
 /app/build/
 /arduino-core/build/
 ~*.xlsx
-
+/.vs/
+/__vm/
+~AutoRecover.Control.vcxproj
+Control.vcxproj
+Control.vcxproj.filters
+Control.vcxproj.user
+/Release/
+/Debug/
 
 
 manifest.mf
