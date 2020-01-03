@@ -1915,8 +1915,8 @@
   const char S33_0001[] PROGMEM = "machineNr Value, machineNr Value,_______:";  //     Auflistung von GeräteNr Wert, GeräteNr Wert,.... für  'Kombination EINSCHALTEN'
   const char S33_0002[] PROGMEM = "g1 1 g2 1                       ________:";  //     Auflistung für 'Kombination AUSSCHALTEN'
   
-  const char S33_0003[] PROGMEM = "g1  1, g1 4, g1 10";         // 01   
-  const char S33_0004[] PROGMEM = "g1 2";                       //     
+  const char S33_0003[] PROGMEM = "";         // 01   
+  const char S33_0004[] PROGMEM = "g1 2, g2 2";                       //     
   const char S33_0005[] PROGMEM = "g1 1";                       //     
   
   const char S33_0006[] PROGMEM = "g2 1  g3 1";                 // 02 INIT   Gerät 2 AUS, Gerät 3 AUS  = STOP                 k2 3    INIT
