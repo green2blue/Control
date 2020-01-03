@@ -12,8 +12,8 @@
 //  Alternative: nicht pro Macro diese Datenstruktur sondern pro Task+Macro. 
 macro_nr_struct  m_info[_MACRO_COUNT+1];        // Info zu jeder Macro-Nummer  .Running1  .StepNr1  .LastState1 (Element 0 unverwendet da Macros bei Nr1 beginnen nur der Einfachheit wegen)
 
-#include "Taks_Type.h"          // gehört zum TaskScheduler, eine zentrale Angelegenheit dieser Software gemeinsam mit der LCDMenuLib2
-#include <TaskScheduler.h>      // Master-Timer
+//#include "Taks_Type.h"          // gehört zum TaskScheduler, eine zentrale Angelegenheit dieser Software gemeinsam mit der LCDMenuLib2
+//#include <TaskScheduler.h>      // Master-Timer
 
 #define _TASK_SLEEP_ON_IDLE_RUN // Master-Timer ein Parameter
 #define _TASK_STATUS_REQUEST    // Master-Timer Ein Task kann Ereignisgesteuert gestartet werden

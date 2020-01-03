@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Control.ino" />
+    <None Include="Check_UART.ino" />
+    <None Include="C_.ino" />
+    <None Include="EEPR.ino" />
+    <None Include="Fkt_Conv.ino" />
+    <None Include="Helps.ino" />
+    <None Include="HX711.ino" />
+    <None Include="LCD_cont.ino" />
+    <None Include="LCD_disp.ino" />
+    <None Include="LCD_disp_dyFkt.ino" />
+    <None Include="LCD_Mnu.ino" />
+    <None Include="PCF.ino" />
+    <None Include="Task_Fkt.ino" />
+    <None Include="Tbl_DO.ino" />
+    <None Include="Tbl_Fkt.ino" />
+    <None Include="Time_Fkt.ino" />
+    <None Include="C_Mnu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.Control.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sonderzeichen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Taks_Type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tbl_heat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
