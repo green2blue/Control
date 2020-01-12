@@ -14,6 +14,7 @@ macro_nr_struct  m_info[_MACRO_COUNT+1];        // Info zu jeder Macro-Nummer  .
 
 //#include "Taks_Type.h"          // gehört zum TaskScheduler, eine zentrale Angelegenheit dieser Software gemeinsam mit der LCDMenuLib2
 //#include <TaskScheduler.h>      // Master-Timer
+#include "Func_Tbl.h"
 
 #define _TASK_SLEEP_ON_IDLE_RUN // Master-Timer ein Parameter
 #define _TASK_STATUS_REQUEST    // Master-Timer Ein Task kann Ereignisgesteuert gestartet werden
@@ -123,26 +124,26 @@ int32_t SetUART(int32_t SetBaudrate) {
   return AktBaudrate;
 }
 
-//---------------------------------------------------------------------
-// Sprache einstellen/lesen  
-// 0=Standard=engl.  1=deutsch  2=französisch  siehe Tbl_ Bereich LNG
-// Wenn man im Parameter SetLng einen Wert >= 0 angibt wird diese Nummer
-// zur aktuellen Sprache gemacht.
-// Bsp: CurrLanguage(1)  stellt die Sprache auf Deutsch
-//                  (0)  stellt die Sprache auf engl.
-//                  (-1) stellt nichts sondern liefert nur die aktuell eingestellte Sprache
-//---------------------------------------------------------------------
-int8_t CurrLanguage(int8_t = -1);  // Stadardwert für Sprachenparameter wenn beim Aufruf nichts angegeben wird.
-int8_t CurrLanguage(int8_t SetLng) {
-  static int8_t Lng;
-  if (SetLng >= 0 && SetLng < _LNGCOUNT) {  // nur wenn ein Parameterwert mitgegeben wurde wird die Sprache gestellt
-    if (Lng != SetLng) {
-      Lng = SetLng; 
-      EE_ParaLet(2, Lng);         // eingestellte Sprache auch im EEPROM speichern.
-    }
-  }   
-  return Lng;
-}
+////---------------------------------------------------------------------
+//// Sprache einstellen/lesen  
+//// 0=Standard=engl.  1=deutsch  2=französisch  siehe Tbl_ Bereich LNG
+//// Wenn man im Parameter SetLng einen Wert >= 0 angibt wird diese Nummer
+//// zur aktuellen Sprache gemacht.
+//// Bsp: CurrLanguage(1)  stellt die Sprache auf Deutsch
+////                  (0)  stellt die Sprache auf engl.
+////                  (-1) stellt nichts sondern liefert nur die aktuell eingestellte Sprache
+////---------------------------------------------------------------------
+//int8_t CurrLanguage(int8_t = -1);  // Stadardwert für Sprachenparameter wenn beim Aufruf nichts angegeben wird.
+//int8_t CurrLanguage(int8_t SetLng) {
+//  static int8_t Lng;
+//  if (SetLng >= 0 && SetLng < _LNGCOUNT) {  // nur wenn ein Parameterwert mitgegeben wurde wird die Sprache gestellt
+//    if (Lng != SetLng) {
+//      Lng = SetLng; 
+//      EE_ParaLet(2, Lng);         // eingestellte Sprache auch im EEPROM speichern.
+//    }
+//  }   
+//  return Lng;
+//}
 
 //-----------------------------------------------------------------------
 // Setup Einstellungen für das Menü der Menülib

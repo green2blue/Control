@@ -33,20 +33,20 @@ typedef struct {              // 18 Bytes insgesamt, bei 10 Tasks werden hier 18
     uint8_t    objswitchto3;  // 1 Byte 1=off  2=on  3...255 PWM
 } t_var;
 #endif
-#ifndef _ERR_TIMESTAMP_
-#define _ERR_TIMESTAMP_
-// Zeitstempel für den letzten Error-Log-Eintrag pro Fehler im EEPROM 2018-03-29 
-typedef struct packed_timestamp_bits {
-  unsigned int JJJJ : 12; // Jahr (reicht bis 4095)
-  unsigned int MO   : 4;  // Monat(0..12) 
-  unsigned int DD   : 5;  // Tag  (0..31) geht sich gerade aus
-  unsigned int HH   : 5;  // Stunde (0..24) 
-  unsigned int MM   : 6;  // Minute (0..60)
-  unsigned int SS   : 6;  // Sekunde(0..60)
-  unsigned int FF   : 2;  // 2 Restbits auf 40 Bit = 5 Byte für den Zeitstempel
-} timestampstruct;
-timestampstruct timestamp; // die Variable timestamp.JJJJ  .MM usw. ist im Programm zu verwenden
-#endif
+//#ifndef _ERR_TIMESTAMP_
+//#define _ERR_TIMESTAMP_
+//// Zeitstempel für den letzten Error-Log-Eintrag pro Fehler im EEPROM 2018-03-29 
+//typedef struct packed_timestamp_bits {
+//  unsigned int JJJJ : 12; // Jahr (reicht bis 4095)
+//  unsigned int MO   : 4;  // Monat(0..12) 
+//  unsigned int DD   : 5;  // Tag  (0..31) geht sich gerade aus
+//  unsigned int HH   : 5;  // Stunde (0..24) 
+//  unsigned int MM   : 6;  // Minute (0..60)
+//  unsigned int SS   : 6;  // Sekunde(0..60)
+//  unsigned int FF   : 2;  // 2 Restbits auf 40 Bit = 5 Byte für den Zeitstempel
+//} timestampstruct;
+//timestampstruct timestamp; // die Variable timestamp.JJJJ  .MM usw. ist im Programm zu verwenden
+//#endif
 #ifndef _BLINK_INFO_
 #define _BLINK_INFO_
 // Stelle um Informationen zum Blinken der Power-LED und LCD-Hintergrundbeleuchtung und 1x Reserveblink RAM-sparsam zu Speichern 

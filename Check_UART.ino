@@ -19,10 +19,13 @@
 #define UART_HLP    '?'   // Buchstabe für HELP danach sollte der Buchstabe folgen für den HILFE gewünscht ist  Bsp: ?c --> Auflistung aller commandos  
 // frei: a,b,h,j,n,q,u,v,x,y,z  ,alle GROSSBUCHSTABEN, Sonderzeichen, Zahlen 
 
-char     UART_buffer[_UART_BUFFLEN];      // eine Zeichenkette einzeln vom UART eingelesen bis zum ENTER = 10
-uint8_t  UAIdx=0;                         // Zechenanzahl bzw. Hilfszeiger für die Bearbeitung der Zeichenkette in UART_buffer[]
-uint8_t  UART_bufferlen=0;                // Länge der Zeichenkette
-int32_t  sbufferNr[5]  = {0,0,0,0,0};     // Nummern-Array für diverse Zwecke 
+#include "Global.h"
+#include "Func_Help.h"
+
+//char     UART_buffer[_UART_BUFFLEN];      // eine Zeichenkette einzeln vom UART eingelesen bis zum ENTER = 10
+//uint8_t  UAIdx=0;                         // Zechenanzahl bzw. Hilfszeiger für die Bearbeitung der Zeichenkette in UART_buffer[]
+//uint8_t  UART_bufferlen=0;                // Länge der Zeichenkette
+
 //----------------------------------------------------------------------------------------------------------------------------------
 //  Funktionen im Zusammenhang mit dem Hören / Senden auf der SERIELLEN Schnittstelle (universal asyncronous receiver transmitter)
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -916,58 +919,6 @@ uint8_t LCD_Numb(int8_t Cursor_Spalte, int8_t Cursor_Zeile, int32_t Numb, int8_t
 }
 
 
-//-----------------------------------------------------------------------------------------------------------------------------
-// liefert die StartPos ab der in der Zeichenkette &xbuffer bis zu EndPos ein Inhalt UNGLEICH noSChar und UNGLEICH noSChar2
-// zu finden ist;  gedachte Anwendung: Das Auffinden der ersten relevanten Stelle in einer Zeichenkette.
-// Liefert in foundChar das gefundenen Zeichen, damit kann man gleich feststellen ob eine Zahl oder sonstiges Zeichen vorliegt.
-// Die Funktion könnte auch heißen   'GetNextRelevantPosAndChar()'
-// Üblicherweise ist noSChar ' ', ein LEERZEICHEN  Üblicherweise trennt ' ' die zu interpretiernden Zeichen voneinander.
-// wenn 255 geliefert wird, dann gibt es keine passende Stelle, ebenfalls wird in diesem Fall foundChar auf 0x00 gesetzt.
-// ACHTUNG &bufferStartPos wird  hier bei einem Treffer eines noSChar Zeichens an die Position dieses Zeichens gesetzt.
-//-----------------------------------------------------------------------------------------------------------------------------
-//int16_t GetPosNEQ(char xbuffer[], int16_t & StartPos, int16_t & EndPos, char & foundChar, char noSChar, char = 0xfe);
-int16_t GetPosNEQ(char xbuffer[], int16_t & StartPos, int16_t & EndPos, char & foundChar, char noSChar, char noSChar2 ) {
-  uint8_t found = 0;
-  uint8_t i;
-  for (i=StartPos; i < EndPos; i++) {             // suche und untersuche im erlaubten Bereich 
-    foundChar = xbuffer[i]; 
-    if (foundChar != noSChar && foundChar != noSChar2 ) {             // sobald ein nützliches Zeichen entdeckt wird ist man fertig
-      StartPos = i;                               // dieser Wert könnte auch 0 sein und damit doch gültig 
-      foundChar = xbuffer[i];
-      found = 1;
-      break;   }
-  }   
-  if (found == 0) {                               // wenn keine passende Stelle gefunden wurde
-      StartPos = -1;                              // 32767; // INTEGER positives Maximum  -32767 negatives Maximum
-      foundChar = 0x00;
-      }                                           // wenn keine gültige Stelle gefunden wurde wird -1 als Wert geliefert
-    else {         }                              // gültige Stelle gefunden, StartPos beinhaltet bereits die passende Stelle
-  return StartPos;   
-}
-
-//-----------------------------------------------------------------------------------------------------------------------------
-// Liefert die StartPos ab der in der Zeichenkette ein Inhalt GLEICH searchChar oder searchChar2 vorliegt 
-// und liefert das nächstgelegene Zeichen Gegenstück zu GetPosNEQ  
-//-----------------------------------------------------------------------------------------------------------------------------
-int16_t GetPosEQ(char xbuffer[], int16_t &StartPos, int16_t &EndPos, char & foundChar, char searchChar, char = 0xfe);
-int16_t GetPosEQ(char xbuffer[], int16_t &StartPos, int16_t &EndPos, char & foundChar, char searchChar, char searchChar2 ) {
-  uint8_t found = 0;
-  uint8_t i;
-  for (i=StartPos; i < EndPos; i++) {                         // suche und untersuche im erlaubten Bereich 
-    foundChar = xbuffer[i];
-    if (foundChar==searchChar || foundChar==searchChar2) {    // sobald ein Zeichen entdeckt wird ist man fertig
-      StartPos = i;                                           // dieser Wert könnte auch 0 sein und damit doch gültig 
-      if (StartPos < EndPos) {foundChar=xbuffer[StartPos+1];} else {foundChar= 0x00;}
-      found = 1;
-      break;  }
-  }   
-  if (found == 0) {                                           // wenn keine passende Stelle gefunden wurde
-      StartPos = 255; 
-      foundChar = 0x00;
-      }                                                       // wenn keine gültige Stelle gefunden wurde wird 255 als Wert geliefert
-    else {         }                                          // gültige Stelle gefunden, bufferStartPos beinhaltet bereits die passende Stelle
-  return StartPos;   
-}
 
 
 //------------------------------------------------------------------------

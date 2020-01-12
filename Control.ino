@@ -1,6 +1,16 @@
 // 2019-01-05  Nachfolger von H_1  (Steuerung von Anlagen alleine über arduino oder via RasPi mittels arduino)
 //  Code ist in Entwicklung, Tbl_heat.h ist im Aufbau 
 // Sketchbook: W:\Projekte\Heizung\Arduino\Control   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#include "Func_Help.h"
+#include "Global.h"
+
+
+
+#include "Func_Tbl.h"
+#include "Func_EEPROM.h"
+#include "Func_Time.h"
+#include "Func_Tbl.h"
+
 #define SWName     "3it-control:"   // Name der Software  
 #define SWVersion  "2.0"            // Version der Software  
 //#include <stdio.h>       
@@ -18,20 +28,28 @@
 #include "Taks_Type.h"              // diverse Typendefinitionen 
 #include <TaskScheduler.h>          // Master-Timer
 #include "PinChangeInterrupt.h"     // damit können für die PINs: 10,11,12,13,  50, 51,52,53,  62,63,64,65,66,67,68,69   ISR gemacht werden.
+#include "Func_Time.h"              // Allgemeine Funktionen im Zusammenhang mit der Zeit/Datum 
 
-#define _UART_BUFFLEN    50         // Maximale Länge eines einzelnen mit LF abzuschließenden Kommandos das in den buffer UART_buffer[] aufgenommen werden kann/soll
-#define _BUFFERLEN1     200         // Maximale Länge die für einen Zugriff auf den Flash-Speicher zur Verfügung stehen soll buffer[]
-#define _BUFFERLEN2      21         // Maximale Länge für 'kurze' Zugriffe auf den Flash-Speicher, nur zum Einlesen von kurzen Inhalten wie Zahlen od. LCD-Zeilen
-#define _TASKS_COUNT     10         // Anzahl Tasks die gleichzeitig laufen können
-
+//
+//#define _UART_BUFFLEN    50         // Maximale Länge eines einzelnen mit LF abzuschließenden Kommandos das in den buffer UART_buffer[] aufgenommen werden kann/soll
+//#define _BUFFERLEN1     200         // Maximale Länge die für einen Zugriff auf den Flash-Speicher zur Verfügung stehen soll buffer[]
+//#define _BUFFERLEN2      21         // Maximale Länge für 'kurze' Zugriffe auf den Flash-Speicher, nur zum Einlesen von kurzen Inhalten wie Zahlen od. LCD-Zeilen
+//#define _TASKS_COUNT     10         // Anzahl Tasks die gleichzeitig laufen können
+//
 char    Buffer1[_BUFFERLEN1];       // Hauptsächlich verwendet zum Einlesen aus dem Flash aber auch für anderes verwendet
 char    Buffer2[_BUFFERLEN2];       // ein 2. kurzer BUFFER für Flash-Inhalte zum parallelen Abarbeiten mit Buffer1[]
-
+//
 int16_t Buffer1Len=0;               // Länge der Buffer1[] 
 int16_t Buffer2Len=0;               // Länge des Buffer2[] 
-         
+//         
 volatile uint32_t   lastIntTime=0;  // Hilfsvariable zum Entprellen von Schaltern innerhalb einer ISR (Ein/Aus/Notaus/..) // aktuell: Endschalter, Power-Taste, Not-Aus-Taste 
 volatile uint32_t   aktIntTime=0;   // weitere Hilfsvariable zum Entprellen gemeinsam mit lastIntTime innerhalb einer ISR
+
+int32_t  sbufferNr[5] = { 0,0,0,0,0 }; 
+
+char     UART_buffer[_UART_BUFFLEN];      // eine Zeichenkette einzeln vom UART eingelesen bis zum ENTER = 10
+uint8_t  UAIdx = 0;                         // Zechenanzahl bzw. Hilfszeiger für die Bearbeitung der Zeichenkette in UART_buffer[]
+uint8_t  UART_bufferlen = 0;                // Länge der Zeichenkette
 
 uint8_t  lastAReference=1;          // Merker für die zuletzt am arduino verwendete: analogReference(.)  
                                     // DEFAULT=1 INTERNAL1V1=2 INTERNAL2V56=3 EXTERNAL=0

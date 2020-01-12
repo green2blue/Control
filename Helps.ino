@@ -1,3 +1,5 @@
+#include "Global.h"
+//char    Buffer2[_BUFFERLEN2];
 
 int32_t scrollval[4]={0,0,0,0}; // nur zum Test 4 unterschiedliche Variablen die mittels srollkontext angesprungen werden können
  // uint8_t scrollvarIDX=0;        // hier weiter nachdenken wie man die Adresse einer beliebigen Variable als Kontext einstellen kann.

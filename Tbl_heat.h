@@ -1,3 +1,5 @@
+#ifndef _Tbl_heat_h
+    #define _Tbl_heat_h
 //---------------------------------------------------------------------------------------------------------------------
 // Daten, Standardwerte, Sprachen, Auswahlmöglichkeiten, Texte, Namen   die im FLASH des Microcontrollers 
 //  abgelegt werden und per Funktion F2X() in Kombination mit T_Idx(Bereich,SatzNr,FeldNr)
@@ -2578,3 +2580,5 @@ S43_0240,S43_0241,S43_0242,S43_0243,S43_0244,S43_0245,S43_0246,S43_0247,S43_0248
 
 
 S99_0000};
+
+#endif
